@@ -10,6 +10,26 @@ setup(500,300)
 #y_pos = -150
 #
 ### Write your code below:
+inp = int(input("How many sides?"))
+
+def shape(num):
+    for i in range(num):
+        t.forward(90)
+        t.left(360/num)
+
+shape(inp)
+
+
+
+
+#def shape(num):
+    #for i in range(num):
+        #t.forward(90)
+        #t.left(360/num)
+
+#shape(5)
+#shape(3)
+
 pendown()
 pencolor("red")
 forward (90)
