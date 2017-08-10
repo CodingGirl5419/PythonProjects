@@ -1,6 +1,6 @@
 class User:
     # Define the fields and methods for your object here.
-    def __init__(self, name, password, friends, ConnectionNet):
+    def __init__(self, name, password):
         self.user_name = name
         self.friends = []
         self.pass_word = password
@@ -30,8 +30,7 @@ class User:
 
 class Network:
     # Define the fields and methods for your object here.
-    def __init__(self, allUsers, profile, user1, user2):
-        self.profile = profile
+    def __init__(self):
         self.all_users = []
 
     def addallUsers(self, user):
@@ -70,24 +69,31 @@ def main():
     y1 = input("Username:")
     y2 = input("Password:")
 
-    User(username, password)
-    
+    newUser = User(y1, y2)
+
+    otherUser = User("alex", "123")
+
     #if input == y:
         #y = input("Username:")
         #y = input("Password:")
         #password = input("Password:")
         #if password == password:
                 #print("Your passwords do not match")
-
+    myNetwork = Network()
+    myNetwork.addallUsers(newUser)
+    myNetwork.addallUsers(otherUser)
+    myNetwork.getall_users(newUser, otherUser)
     print("Welcome!", y1, "!")
 
-print("------------------------------")
-input("Type 'add user' to add a user")
-print("------------------------------")
-input("Type the name of the user to add them")
-print("-------------------------------------")
-if input == user2:
-    addConnectionNet(user1, user2)
+    print("------------------------------")
+    input("Type 'add user' to add a user")
+    print("------------------------------")
+    input("Type the name of the user to add them")
+    print("-------------------------------------")
+    #user2 = ("cat")
+    myNetwork.addConnectionNet(newUser, otherUser)
+
+
 
 
 #print("type in your username")
@@ -95,4 +101,4 @@ if input == user2:
 #print("Who do you want to connect to?")
 # Runs your program.
 if __name__ == '__main__':
-    main();
+    main()
